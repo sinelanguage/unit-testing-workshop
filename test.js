@@ -1,6 +1,7 @@
 import assert from "assert";
 // import { assert } from "chai";
 import chai, { expect } from "chai";
+import thingsToTest from "./app";
 
 // Assert
 // Node assert
@@ -55,5 +56,13 @@ describe("Using Chai Should BDD", () => {
   it("should demonstrate a passing test calling should on a new object", () => {
     const myObject = { foo: "bar" };
     myObject.should.have.property("foo");
+  });
+});
+
+// broken, we fix
+describe("should use should to test functions", () => {
+  it("should equal 4", () => {
+    const result = thingsToTest.addTwoNumbers(2, 2);
+    thingsToTest.addTwoNumbers.should.equal(4);
   });
 });
